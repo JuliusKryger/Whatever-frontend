@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webpack/Babel-demo</title>
+</head>
+
+<body>
+  <ul id="menu" class="header">
+    <li><a href="" id="about">About</a></li>
+    <li><a href="" id="ex1">Ex1</a></li>
+    <li><a href="" id="ex2">Ex2</a></li>
+    <li><a href="" id="ex3">Ex3</a></li>
+  </ul>
+
+  <div class="content">
+
+    <!-- This is were you should place your basic HTML for exercise-1 -->
+    <div id="ex1_html" style="display:none;">
+      <h3>Exercise 1</h3>
+      <p>Add your basic HTML for Exercise 1 here</p>
+      <ul id="jokes"></ul>
+      <input type="text" id="jokeByIdText" length="5" />
+      <input type="button" id="jokeByIdButton" value="Get Joke" />
+      <p id="jokeByIdOutput"></p>
+      <input type="text" id="addJokeText" length="50" />
+      <input type="button" id="addJokeButton" value="Add Joke" />
+    </div>
+    <!-- End of HTML for exercise-1 -->
+
+    <!-- This is were you should place your basic HTML for exercise-2 -->
+    <div id="ex2_html" style="display:none;">
+      <h3>Exercise 2</h3>
+      <input type="button" id="minuteJokeButton" value="Get joke" />
+      <p></p>
+      <p id="minuteJokeText"></p>
+    </div>
+    <!-- End of HTML for exercise-2 -->
+
+
+    <!-- This is were you should place your basic HTML for exercise-3 -->
+    <div id="ex3_html" style="display:none;">
+      <h3>Ex-3</h3>
+
+      <div class=" col-md-8 pre-scrollable" style="background-color: lightgrey;">
+        <h5>All Users</h5>
+        <p id="p1"></p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Bruger ID</th>
+              <th>First name</th>
+              <th>Last name</th>
+              <th>Email</th>
+              <th>Hobby</th>
+              <th>?</th>
+              <th>?</th>
+              <th>?</th>
+              <th>?</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-4" style="background-color: powderblue;">
+        <h5>Find User</h5>
+        <p>Enter user-id and hit the button:</p>
+        <input type="text" id="findUserText" />
+        <input type="button" id="findUserButton" value="Find" /><br />
+        <div id="findUserDiv"></div>
+      </div>
+    </div>
+    <div class="row" style="min-height: 5em;">
+      <div class="col-md-4" style="background-color: powderblue;">
+        <h5>Add User</h5>
+        <p>Enter info and hit the add button</p>
+        <table>
+
+          <tr>
+            <td>first Name</td>
+            <td><input type="text" id="personFirstName" /></td>
+          </tr>
+
+          <tr>
+            <td>last Name</td>
+            <td><input type="text" id="personLastName" /></td>
+          </tr>
+
+          <tr>
+            <td>Email</td>
+            <td><input type="text" id="personEmail" /></td>
+          </tr>
+
+          <tr>
+            <td>Phone Number</td>
+            <td><input type="text" id="personPhone" /></td>
+          </tr>
+
+          <tr>
+            <td>City</td>
+            <td><input type="text" id="addressCity" /></td>
+          </tr>
+
+          <tr>
+            <td>Zip code</td>
+            <td><input type="text" id="addressZip" /></td>
+          </tr>
+
+          <tr>
+            <td>Street</td>
+            <td><input type="text" id="addressStreet" /></td>
+          </tr>
+      
+          <tr>
+            <td>hobby name</td>
+            <td><input type="text" id="personHobby" /></td>
+          </tr>
+
+          <tr>
+            <td>Hobby category</td>
+            <td><input type="text" id="personHobbyCat" /></td>
+          </tr>
+
+          <tr>
+            <td>Hobby type</td>
+            <td><input type="text" id="personHobbyType" /></td>
+          </tr>
+
+          <tr>
+            <td>Hobby wikiLink</td>
+            <td><input type="text" id="personHobbyWiki" /></td>
+          </tr>
+
+        </table>
+        <input type="button" id="addUserButton" value="Add" />
+        <div id="addUserResult"></div>
+      </div>
+
+
+
+      <div class="col-md-4" style="background-color: lightgrey;">
+        <h5>Edit User</h5>
+        <p>Enter info and hit the add button</p>
+        <table>
+          <tr>
+            <td>Id: </td>
+            <td><input type="text" id="editUserIdText" /></td>
+          </tr>
+          <tr>
+            <td>Age: </td>
+            <td><input type="text" id="editUserAgeText" /></td>
+          </tr>
+          <tr>
+            <td>Name: </td>
+            <td><input type="text" id="editUserNameText" /></td>
+          </tr>
+          <tr>
+            <td>Gender: </td>
+            <td><input type="text" id="editUserGenderText" /></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" id="editUserEmailText" /></td>
+          </tr>
+        </table>
+        <input type="button" id="editUserButton" value="Edit" />
+        <div id="editUserResult"></div>
+
+      </div>
+      <div class="col-md-4" style="background-color: powderblue;">
+        <h5>Delete User</h5>
+        <p>Enter user-id and hit the button:</p>
+        <input type="text" id="deleteUserText" />
+        <input type="button" id="deleteUserButton" value="Delete" /><br />
+        <div id="deleteUserDiv"></div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-danger" role="alert">
+              <p id="errorMessage"></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- End of HTML for exercise-3 -->
+
+  <!---- HTML for the About page -->
+  <div id="about_html" style="display:none;">
+    <h3>About</h3>
+    <p>Watch the small video given as intro to this code, BEFORE you start using it</p>
+  </div>
+  <!-- End of HTML for ABOUT Page -->
+
+  </div>
+
+  <!-- #################################################################-->
+  <!-- IMPORTANT  DO NOT IMPORT ANY JavaScript in this file by YOURSELF -->
+  <!-- #################################################################-->
+
+</body>
+
+</html>
